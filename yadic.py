@@ -5,7 +5,7 @@ import requests, json
 # Получить токен можно по этой ссылке: https://translate.yandex.ru/developers/keys
 # Проверить количество переведенных символов в Статистике: https://translate.yandex.ru/developers/stat
 
-with open('token.txt', 'r') as t: token = t.read()
+with open('.token', 'r') as t: token = t.read()
 
 def translate(eng_text):
     requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
