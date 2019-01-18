@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import requests, json, platform
-if platform.system() == 'Windows': import os
+import requests, json, platform, os
 
 # Получить токен можно по этой ссылке: https://translate.yandex.ru/developers/keys
 # Проверить количество переведенных символов в Статистике: https://translate.yandex.ru/developers/stat
