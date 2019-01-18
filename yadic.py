@@ -8,7 +8,7 @@ if platform.system() == 'Windows': import os
 
 with open('token.txt', 'r') as t: token = t.read()
 
-def translate(eng_text, _cnt):
+def translate(eng_text):
     
     requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
     _url = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
@@ -16,7 +16,7 @@ def translate(eng_text, _cnt):
     _req = requests.get(_url, params=_options, verify=False)
     _result = json.loads(_req.content)
     if _result.get('code') == 200:
-        print(f"[{_cnt}] r: {_result.get('text')[0]}")
+        return _result.get('text')[0]
     else:
         print(f"\nError. Find the reference for code { _result.get('code')} here:\nhttps://tech.yandex.ru/translate/doc/dg/reference/translate-docpage/") 
 
@@ -34,5 +34,6 @@ if __name__ == '__main__':
                 _clear()
                 _cnt -= 1
             else:
-                translate(_text, _cnt) 
+                _result = translate(_text)
+                print(f"[{_cnt}] r: {_result}")
             _cnt += 1
