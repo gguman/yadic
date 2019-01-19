@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import requests, json, platform, os, re
+import requests, json, platform, os, re, time
 
 # Получить токен можно по этой ссылке: https://translate.yandex.ru/developers/keys
 # Проверить количество переведенных символов в Статистике: https://translate.yandex.ru/developers/stat
@@ -41,7 +41,7 @@ def grab_text():
                 
             _cnt += 1
 
-
+    time.sleep(1)
 if __name__ == '__main__':
     #print(grab_text.__doc__)
     grab_text()
