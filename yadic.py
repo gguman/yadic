@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import requests, json, platform, os, re
+'''
+    yep
+'''
+
 
 # Получить токен можно по этой ссылке: https://translate.yandex.ru/developers/keys
 # Проверить количество переведенных символов в Статистике: https://translate.yandex.ru/developers/stat
@@ -30,7 +34,7 @@ def grab_text():
     _cnt = 1
     while True:
         _text = input(f'\n[{_cnt}] t: ' )
-        if len(_text) > 0:
+        if re.search('\w', _text):
             if re.search('^!', _text):
                 if re.search('exit', _text): exit()
                 if re.search('clear', _text): _clear = lambda: os.system(_cl); _clear(); _cnt -= 1
@@ -43,5 +47,4 @@ def grab_text():
 
 
 if __name__ == '__main__':
-    #print(grab_text.__doc__)
     grab_text()
