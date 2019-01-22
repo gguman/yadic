@@ -1,15 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+<<<<<<< HEAD
 import requests, json, platform, os, re
 '''
     yep
 '''
 
+=======
+import requests, json, platform, os, re, time
+>>>>>>> a29097dd5dfdba4fa05039dac0e7a3dc0e98aef4
 
 # Получить токен можно по этой ссылке: https://translate.yandex.ru/developers/keys
 # Проверить количество переведенных символов в Статистике: https://translate.yandex.ru/developers/stat
 
-with open('token.txt', 'r') as t: token = t.read()
+with open('.token', 'r') as t: token = t.read()
 
 def translate(eng_text):
     
@@ -45,6 +49,6 @@ def grab_text():
                 
             _cnt += 1
 
-
+    time.sleep(1)
 if __name__ == '__main__':
     grab_text()
